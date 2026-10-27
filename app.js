@@ -70,11 +70,8 @@ const editTask = function () {
   const editInput = listItem.querySelector("input[type=text]");
   const label = listItem.querySelector("label");
   const editBtn = listItem.querySelector(".edit");
-  const containsClass = listItem.classList.contains("editMode");
-  //If class of the parent is .editmode
-  if (containsClass) {
-    //switch to .editmode
-    //label becomes the inputs value.
+  const isEditMode = listItem.classList.contains("editMode");
+  if (isEditMode) {
     label.innerText = editInput.value;
     editBtn.innerText = "Edit";
   } else {
@@ -82,7 +79,6 @@ const editTask = function () {
     editBtn.innerText = "Save";
   }
 
-  //toggle .editmode on the parent.
   listItem.classList.toggle("editMode");
 };
 
