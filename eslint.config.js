@@ -2,17 +2,17 @@ import js from "@eslint/js";
 import globals from "globals";
 
 export default [
-  js.configs.recommended,
   {
-    languageOptions: {
-      globals: {
-        ...globals.browser,
-      },
-    },
     rules: {
+      ...js.configs.recommended.rules,
       "no-var": "error",
       "prefer-const": "error",
-      "no-console": "warn",
+      "no-console": "error",
     },
+    languageOptions: {
+      globals: globals.browser,
+      ecmaVersion: "latest",
+      sourceType: "script"
+    }
   },
-];
+]
