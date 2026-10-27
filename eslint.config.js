@@ -3,6 +3,7 @@ import globals from "globals";
 
 export default [
   {
+    files: ["app.js"],
     rules: {
       ...js.configs.recommended.rules,
       "no-var": "error",
