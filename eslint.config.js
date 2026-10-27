@@ -13,7 +13,7 @@ export default [
     languageOptions: {
       globals: globals.browser,
       ecmaVersion: "latest",
-      sourceType: "script"
-    }
+      sourceType: "script",
+    },
   },
-]
+];
