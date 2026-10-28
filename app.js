@@ -66,7 +66,9 @@ const toggleTaskStatus = (event) => {
   const listItem = checkBox.parentNode;
   const isCompleted = checkBox.checked;
 
-  const targetHolder = isCompleted ? completedTasksHolder : incompleteTaskHolder;
+  const targetHolder = isCompleted
+    ? completedTasksHolder
+    : incompleteTaskHolder;
   targetHolder.appendChild(listItem);
 };
 
@@ -93,9 +95,9 @@ const addTask = () => {
 addButton.addEventListener("click", addTask);
 
 Array.from(incompleteTaskHolder.children).forEach((task) =>
-  bindTaskEvents(task, toggleTaskStatus)
+  bindTaskEvents(task, toggleTaskStatus),
 );
 
 Array.from(completedTasksHolder.children).forEach((task) =>
-  bindTaskEvents(task, toggleTaskStatus)
+  bindTaskEvents(task, toggleTaskStatus),
 );
